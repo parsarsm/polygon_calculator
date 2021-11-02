@@ -2,6 +2,7 @@ package test;
 
 import main.AreaCalculator;
 import main.Rectangle;
+import main.Square;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
@@ -24,5 +25,13 @@ public class AreaCalculatorTest {
 
         Assertions.assertEquals(15, area1);
         Assertions.assertEquals(12, area2);
+    }
+
+    @Test
+    void testCalcAreaForSquare() {
+        Square square = new Square(3);
+        float area = (new AreaCalculator()).calculate(square);
+
+        Assertions.assertEquals(9, area);
     }
 }
